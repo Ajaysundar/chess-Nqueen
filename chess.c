@@ -7,7 +7,7 @@ int i;
 for(i=1;i<pos;i++)
 {
 if((a[i]==a[pos])||((abs(a[i]-a[pos])==abs(i-pos))))
-return 0;
+return 0;         //queens placed in same diagonal or row
 }
 return 1;
 }
@@ -30,8 +30,8 @@ printf("\n");
 }
 void queen(int n)
 {
-int k=1;
-a[k]=0;
+int k=1;             //Number of queens,row number
+a[k]=0;             //column number 
 while(k!=0)
 {
 a[k]=a[k]+1;
@@ -43,17 +43,17 @@ if(k==n)
 print(n);
 else
 {
-k++;
+k++;              //increment queen
 a[k]=0;
 }
 }
 else
-k--;
+k--;//backtracking
 }
 }
 void main()
 {
-int n=8;
+int n=8;          //Number of queens 
 queen(n);
 printf("\n total solution =%d",count);
 }
